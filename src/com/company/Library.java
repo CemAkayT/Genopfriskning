@@ -3,22 +3,24 @@ package com.company;
 import java.util.ArrayList;
 
 public class Library{
+    private ArrayList<Book> bookList = new ArrayList<>();
 
-    public boolean containsISBN(Bog bog){
-        return bog.getISBN() == 12345;
+
+    public void addBookToShelf(Book book){
+        bookList.add(book);
     }
 
-    public static void main(String[] args) {
-
-    ArrayList<Bog> books = new ArrayList<>();
-
-    books.add(new Bog(1234,2019,"Corona"));
-    books.add(new Bog(1235,2001,"9/11"));
-    books.add(new Bog(1236,1986,"WC in Mexico"));
-       for (Bog b : books){
-           System.out.println(b);
-       }
-
+    public ArrayList<Book> getBookList() {
+        return bookList;
     }
 
+    public boolean containsISBN(Book book){
+
+        for (Book currentBook : bookList) { // tjekker for hver indexplads på hylden om bogen på hylden er lig med bog som ikke er på hylden
+            if (currentBook.getISBN() == book.getISBN()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -1,12 +1,10 @@
 package com.company;
 
-import java.util.ArrayList;
-
-public class Bog {
+public class Book {
     private int ISBN, yearOfRelease;
     private String title;
 
-    public Bog(int ISBN, int yearOfRelease, String title) {
+    public Book(int ISBN, int yearOfRelease, String title) {
         this.ISBN = ISBN;
         this.yearOfRelease = yearOfRelease;
         this.title = title;
